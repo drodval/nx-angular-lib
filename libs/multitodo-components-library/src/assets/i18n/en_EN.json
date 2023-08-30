@@ -1,0 +1,6 @@
+{
+  "HOME": {
+    "TITLE": "Hello {{user}}",
+    "ACCEPT": "Accept"
+  }
+}

@@ -1,0 +1,18 @@
+<div class="field">
+  <pe-dropdown
+    *ngIf="options$ | async as options; else loading"
+    [options]="options"
+    optionLabel="name"
+    (changeSelected)="change($event)"
+  >
+  </pe-dropdown>
+
+  <ng-template #loading>
+    <p-progressSpinner
+      styleClass="w-4rem h-4rem"
+    ></p-progressSpinner>
+  </ng-template>
+</div>
+
+
+

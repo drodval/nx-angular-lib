@@ -1,0 +1,18 @@
+{
+  "/api/v1/*": {
+    "target": "https://108.143.14.154",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/flows/api/v1/*": {
+    "target": "https://108.143.14.154",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/crosscutting.desunir.net/*": {
+    "target": "https://crosscutting.desunir.net",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

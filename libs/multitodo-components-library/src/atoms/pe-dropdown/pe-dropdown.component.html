@@ -1,0 +1,8 @@
+<span class="p-float-label">
+  <p-dropdown [ngClass]="{invalid: invalid}" [options]="options" [(ngModel)]="selectedOption" [disabled]="disabled"
+              [placeholder]="label" (onChange)="onChange($event)" optionLabel="name" inputId="float-label"></p-dropdown>
+  <label for="float-label">{{label}}</label>
+  <div class="select-error-message" *ngIf="invalid">
+    <span *ngIf="invalid && selectErrorMessage"> {{ selectErrorMessage }} </span>
+  </div>
+</span>

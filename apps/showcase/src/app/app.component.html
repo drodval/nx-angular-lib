@@ -1,0 +1,68 @@
+<p-progressBar
+  *ngIf="loading; else noLoading"
+  mode="indeterminate"
+>
+</p-progressBar>
+
+<ng-template #noLoading>
+  <h1>Hola {{userName}}</h1>
+
+  <div class="grid">
+
+    <div class="col col:sm-12">
+      <p-panel
+        header="componente de traducciones"
+        [toggleable]="true"
+      >
+        <pe-language-selector></pe-language-selector>
+        <p>{{ 'HOME.TITLE' | translate: { user: userName } }}</p>
+        <pe-button
+          [icon]="'pi pi-check'"
+          [styleClass]="'p-button-success'"
+          [customLabel]="'HOME.ACCEPT' | translate"
+          [label]="'HOME.TITLE' | translate: { user: userName }"
+        ></pe-button>
+      </p-panel>
+    </div>
+
+    <div class="col">
+      <p-panel
+        header="Login"
+        [toggleable]="true"
+      >
+        <pe-button
+          styleClass="p-button-danger"
+          label="Logout"
+          (onClick)="logout()"
+        >
+        </pe-button>
+      </p-panel>
+
+    </div>
+  </div>
+
+  <h2>Pe-Button</h2>
+  <div class="flex flex-column flex-wrap">
+    <div class="flex align-items-center">
+      <pe-button></pe-button>
+    </div>
+  </div>
+  <h2>Pe-inputText</h2>
+  <multitodo-library-pe-inputText></multitodo-library-pe-inputText>
+  <h2>Pe-dropdown</h2>
+
+  <pe-dropdown
+    [options]="cities"
+    [label]="dropdownLabel"
+    [invalid]="false"
+    selectErrorMessage="Error mensaje example"
+  >
+  </pe-dropdown>
+
+  <h2>Pe-steps</h2>
+  <multitodo-library-pe-steps [steps]="steps"></multitodo-library-pe-steps>
+
+</ng-template>
+
+
+

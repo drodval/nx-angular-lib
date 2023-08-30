@@ -1,0 +1,99 @@
+::ng-deep .primary{
+  .p-button {
+    background-color: #0098CD;
+    color: white;
+  }
+  .p-button:hover {
+  background-color: white;
+  color: #0098CD;
+  }
+  .p-button:active {
+    background-color: white;
+    color: #0098CD;
+  }
+  .p-button:disabled {
+    background-color: #0098CD;
+    color: white;
+    opacity: 0.5;
+  }
+}
+
+::ng-deep .secondary{
+  .p-button {
+    background-color: white;
+    color: #0098CD;
+  }
+  .p-button:hover {
+    background-color: #0098CD;
+    color: white;
+  }
+  .p-button:active {
+    background-color: #0098CD;
+    color: white;
+  }
+  .p-button:disabled {
+    background-color: white;
+    color: #0098CD;
+    opacity: 0.5;
+  }
+}
+
+::ng-deep .danger{
+  .p-button {
+    background-color: white;
+    color: #BE2424;
+  }
+  .p-button:hover {
+    background-color: #BE2424;
+    color: white;
+  }
+  .p-button:active {
+    background-color: #BE2424;
+    color: white;
+  }
+  .p-button:disabled {
+    background-color: white;
+    color: #BE2424;
+    opacity: 0.5;
+  }
+}
+
+::ng-deep .default{
+  .p-button {
+    background-color: #48B283;
+    color: white;
+  }
+  .p-button:hover {
+  background-color: white;
+  color: #48B283;
+  }
+  .p-button:active {
+    background-color: white;
+    color: #48B283;
+  }
+  .p-button:disabled {
+    background-color: #48B283;
+    color: white;
+    opacity: 0.5;
+  }
+}
+
+::ng-deep .contact{
+  .p-button {
+    background-color: #EE6946;
+    color: white;
+  }
+  .p-button:hover {
+  background-color: #F99980;
+  color: white;
+  }
+  .p-button:active {
+    background-color: #EE6946;
+    color: white;
+  }
+  .p-button:disabled {
+    background-color: #F99980;
+    color: white;
+    opacity: 0.5;
+  }
+}

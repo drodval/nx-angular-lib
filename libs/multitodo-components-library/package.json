@@ -1,0 +1,16 @@
+{
+  "name": "@unir/multitodo-components-library",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "primeflex": "3.3.1",
+    "primeicons": "6.0.1",
+    "primeng": "16.0.2",
+    "angular-oauth2-oidc": "15.0.1",
+    "angular-oauth2-oidc-jwks": "15.0.1",
+    "oidc-client": "1.11.5"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
