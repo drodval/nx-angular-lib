@@ -1,97 +1,98 @@
 {
-    "name": "multitodo-components-library",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/multitodo-components-library/src",
-    "prefix": "multitodo-library",
-    "tags": [],
-    "projectType": "library",
-    "targets": {
-        "build": {
-            "executor": "@nx/angular:package",
-            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-            "options": {
-                "project": "libs/multitodo-components-library/ng-package.json"
-            },
-            "configurations": {
-                "production": {
-                    "tsConfig": "libs/multitodo-components-library/tsconfig.lib.prod.json"
-                },
-                "development": {
-                    "tsConfig": "libs/multitodo-components-library/tsconfig.lib.json"
-                }
-            },
-            "defaultConfiguration": "production"
+  "name": "multitodo-components-library",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/multitodo-components-library/src",
+  "prefix": "multitodo-library",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/multitodo-components-library/ng-package.json",
+        "updateBuildableProjectDepsInPackageJson": true
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/multitodo-components-library/tsconfig.lib.prod.json"
         },
-        "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-            "options": {
-                "jestConfig": "libs/multitodo-components-library/jest.config.ts",
-                "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "codeCoverage": true
-                }
-            }
-        },
-        "lint": {
-            "executor": "@nx/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": [
-                    "libs/multitodo-components-library/**/*.ts",
-                    "libs/multitodo-components-library/**/*.html"
-                ]
-            }
-        },
-        "storybook": {
-            "executor": "@storybook/angular:start-storybook",
-            "options": {
-                "port": 4400,
-                "configDir": "libs/multitodo-components-library/.storybook",
-                "browserTarget": "multitodo-components-library:build-storybook",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "build-storybook": {
-            "executor": "@storybook/angular:build-storybook",
-            "outputs": ["{options.outputDir}"],
-            "options": {
-                "outputDir": "dist/storybook/multitodo-components-library",
-                "configDir": "libs/multitodo-components-library/.storybook",
-                "browserTarget": "multitodo-components-library:build-storybook",
-                "compodoc": false
-            },
-            "configurations": {
-                "ci": {
-                    "quiet": true
-                }
-            }
-        },
-        "test-storybook": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "test-storybook -c libs/multitodo-components-library/.storybook --url=http://localhost:4400"
-            }
-        },
-        "static-storybook": {
-            "executor": "@nx/web:file-server",
-            "options": {
-                "buildTarget": "multitodo-components-library:build-storybook",
-                "staticFilePath": "dist/storybook/multitodo-components-library"
-            },
-            "configurations": {
-                "ci": {
-                    "buildTarget": "multitodo-components-library:build-storybook:ci"
-                }
-            }
+        "development": {
+          "tsConfig": "libs/multitodo-components-library/tsconfig.lib.json"
         }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/multitodo-components-library/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/multitodo-components-library/**/*.ts",
+          "libs/multitodo-components-library/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/multitodo-components-library/.storybook",
+        "browserTarget": "multitodo-components-library:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/multitodo-components-library",
+        "configDir": "libs/multitodo-components-library/.storybook",
+        "browserTarget": "multitodo-components-library:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/multitodo-components-library/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "multitodo-components-library:build-storybook",
+        "staticFilePath": "dist/storybook/multitodo-components-library"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "multitodo-components-library:build-storybook:ci"
+        }
+      }
     }
+  }
 }
